@@ -2,7 +2,7 @@
 // into D1 at runtime, not distributed as part of the MIT code license.
 const a = (answer, tier, aliases = []) => ({ answer, tier, aliases });
 export const DEMO = {
-  dayNumber: 1, source: 'OpenKrillion sample bank',
+  language: 'en', dayNumber: 1, source: 'OpenKrillion sample bank',
   prompts: [
     { id: 'p1', text: 'Name a way to prepare potatoes', answers: [a('Mashed potatoes', 'plankton', ['mashed', 'mash']), a('French fries', 'plankton', ['fries', 'chips']), a('Baked potato', 'schooler', ['baked']), a('Gnocchi', 'rare'), a('Aligot', 'deepcut'), a('Pommes soufflées', 'krillion', ['pommes souffle'])] },
     { id: 'p2', text: 'Name an animal whose name is exactly four letters long', answers: [a('Lion', 'plankton'), a('Bear', 'plankton'), a('Wolf', 'schooler'), a('Ibex', 'rare'), a('Tahr', 'deepcut'), a('Mara', 'krillion')] },

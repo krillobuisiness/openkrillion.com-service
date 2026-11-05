@@ -3,7 +3,7 @@ export const SITE = {
   repository: 'https://github.com/VulcanEon/openkrillion.com-service',
   description: 'Play Krillion online with OpenKrillion, an independent open-source daily trivia game. Seven prompts, 25 seconds each. Think rare, dive deeper, and share your score.',
   title: 'Krillion Game — Play Free Daily Trivia | OpenKrillion',
-  languages: ['en', 'zh'], gameplayLanguage: 'en',
+  languages: ['en', 'nl', 'zh'], gameplayLanguage: 'nl',
   price: { amount: 0, currency: 'USD', label: 'Free to play', checkout: false },
   rounds: 7, previewSeconds: 3, answerSeconds: 25, maxScore: 700, metresPerPoint: 10,
   models: [], credits: false, accounts: false,

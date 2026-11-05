@@ -12,7 +12,7 @@
     "db:local": "wrangler d1 migrations apply openkrillion --local",
     "db:remote": "wrangler d1 migrations apply openkrillion --remote --config wrangler.production.jsonc",
     "check": "node scripts/audit.mjs",
-    "test:browser": "node scripts/browser-audit.mjs",
+    "test:browser": "node scripts/browser-audit.mjs && node scripts/browser-audit.mjs http://localhost:3051 output/playwright/audit-nl nl",
     "test:audio": "node scripts/audio-audit.mjs",
     "test:mobile": "node scripts/mobile-flow-audit.mjs",
     "test:art": "node scripts/art-audit.mjs"

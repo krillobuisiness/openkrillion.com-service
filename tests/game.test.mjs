@@ -4,15 +4,20 @@ import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
 import worker, { validateReference } from '../src/worker.mjs';
 import { DEMO } from '../src/demo.mjs';
+import { DUTCH } from '../src/dutch.mjs';
 import { SITE } from '../src/config.mjs';
 import { documents, aiLinks } from '../src/docs.mjs';
 import { etDate, resetAt, normalize, matchAnswer, TIERS } from '../public/rules.mjs';
-import { homePage } from '../src/html.mjs';
+import { homePage, infoPage } from '../src/html.mjs';
+import { getLocale, missingTranslations, translate } from '../public/locale.mjs';
 
 function database(){
   const db=new DatabaseSync(':memory:');
   db.exec(readFileSync(new URL('../migrations/0001_initial.sql',import.meta.url),'utf8'));
   db.exec(readFileSync(new URL('../migrations/0002_pause.sql',import.meta.url),'utf8'));
+  db.exec(readFileSync(new URL('../migrations/0003_language.sql',import.meta.url),'utf8'));
+  db.exec(readFileSync(new URL('../migrations/0004_daily_language_index.sql',import.meta.url),'utf8'));
+  db.exec(readFileSync(new URL('../migrations/0005_interface_answer_languages.sql',import.meta.url),'utf8'));
   const prepare=sql=>({
     bind(...args){
       const s=db.prepare(sql);
@@ -38,8 +43,64 @@ test('answer matching normalizes accents, uses known aliases and avoids short fu
   assert.equal(normalize('São Tomé & Príncipe'),'saotomeandprincipe');
   assert.equal(matchAnswer('mashed',DEMO.prompts[0].answers).answer,'Mashed potatoes');
   assert.equal(matchAnswer('Yttrum',DEMO.prompts[3].answers).correction,true);
+  assert.equal(matchAnswer('wlof',DEMO.prompts[1].answers,'', 'en')?.answer,'Wolf');
   assert.equal(matchAnswer('xyz',DEMO.prompts[3].answers),null);
   assert.equal(matchAnswer('zzzzzzzzzz',DEMO.prompts[0].answers),null);
+});
+test('Dutch bank is independent, complete and validates its four-letter puzzle',()=>{
+  assert.equal(DUTCH.language,'nl');
+  assert.equal(DUTCH.prompts.length,7);
+  const ids=new Set(DUTCH.prompts.map(p=>p.id));
+  assert.equal(ids.size,7);
+  for(const p of DUTCH.prompts){
+    assert.equal(p.language,'nl');
+    assert.ok(p.text.length>10);
+    const canonical=p.answers.map(a=>a.answer.toLocaleLowerCase('nl-NL'));
+    assert.equal(new Set(canonical).size,canonical.length,`duplicate answers in ${p.id}`);
+    for(const a of p.answers){assert.ok(TIERS[a.tier],`invalid tier for ${a.answer}`);assert.equal(TIERS[a.tier].score,[10,15,30,60,85,100].includes(TIERS[a.tier].score)?TIERS[a.tier].score:0);}
+  }
+  const animals=DUTCH.prompts.find(p=>p.id==='nl-p2');
+  assert.ok(animals.answers.every(a=>normalize(a.answer).length===4));
+  assert.equal(matchAnswer('wolf',animals.answers,animals.validation).answer,'wolf');
+  assert.equal(matchAnswer('otter',animals.answers,animals.validation),null);
+  assert.equal(matchAnswer('wolven',animals.answers,animals.validation),null);
+});
+test('Dutch and English sessions load separate puzzle banks',async()=>{
+  const s=service();
+  const nl=await s.call('/api/start',{interfaceLanguage:'nl',answerLanguage:'nl',practice:true});
+  const pair=await s.call('/api/start',{interfaceLanguage:'nl',answerLanguage:'en',practice:true});
+  const en=await s.call('/api/start',{interfaceLanguage:'en',answerLanguage:'en',practice:true});
+  assert.equal(nl.body.interfaceLanguage,'nl');
+  assert.equal(nl.body.answerLanguage,'nl');
+  assert.equal(pair.body.interfaceLanguage,'nl');
+  assert.equal(pair.body.answerLanguage,'en');
+  assert.equal(en.body.interfaceLanguage,'en');
+  assert.equal(en.body.answerLanguage,'en');
+  assert.notEqual(nl.body.prompts[0].text,pair.body.prompts[0].text);
+  assert.notEqual(nl.body.runId,pair.body.runId);
+  s.env.DB.close();
+});
+test('shared locale catalog is complete and drives both SSR languages',()=>{
+  assert.deepEqual(missingTranslations('nl'),[]);
+  assert.deepEqual(missingTranslations('en'),[]);
+  assert.equal(translate('nl','intro.begin'),'▼ DUIK NAAR BENEDEN ▼');
+  assert.equal(translate('en','intro.begin'),'▼ BEGIN DESCENT ▼');
+  assert.equal(translate('xx','intro.begin'),'▼ BEGIN DESCENT ▼');
+  assert.equal(translate('nl','missing.example'),'[missing:missing.example]');
+  const nl=homePage('nl'),en=homePage('en');
+  assert.match(nl,/<html lang="nl">/);
+  assert.match(en,/<html lang="en">/);
+  assert.ok(nl.includes('▼ DUIK NAAR BENEDEN ▼'));
+  assert.ok(en.includes('▼ BEGIN DESCENT ▼'));
+  assert.ok(!nl.includes('▼ BEGIN DESCENT ▼'));
+  assert.ok(!en.includes('▼ DUIK NAAR BENEDEN ▼'));
+  assert.ok(nl.includes('AI- en agentdocumenten'));
+  assert.ok(en.includes('AI &amp; Agent Docs'));
+  assert.ok(infoPage('/privacy','nl').includes('Privacy bij OpenKrillion'));
+  assert.ok(infoPage('/privacy','en').includes('OpenKrillion Privacy'));
+  assert.ok(!infoPage('/privacy','nl').includes('Game progress'));
+  assert.equal(getLocale('nl').guide.title,'Krillion: de complete duikgids');
+  assert.equal(getLocale('en').guide.title,'Krillion: the complete dive guide');
 });
 test('reference import validates date, question identity and tier whitelist',()=>{
   const date='2026-10-17';const today={date,dayNumber:94,prompts:DEMO.prompts.map(({id,text})=>({id,text}))},reveal={date,prompts:structuredClone(DEMO.prompts)};
@@ -87,10 +148,10 @@ test('four docs share product facts, full composes all three, config mutations p
   const b=documents(changed);assert.ok(b['/pricing.md'].includes('7 USD'));assert.ok(b['/models.md'].includes('Isolated capability test'));assert.ok(b['/llms-full.txt'].includes('Test pricing'));assert.ok(!JSON.stringify(b).includes('DO_NOT_LEAK'));
 });
 test('five AI destinations share one localized prompt, canonical docs and native link safety',()=>{
-  for(const lang of SITE.languages){const links=aiLinks(lang);assert.equal(links.length,5);const q=links.map(a=>new URL(a.href).searchParams.get('q'));assert.equal(new Set(q).size,1);assert.ok(q[0].includes(SITE.origin+'/llms-full.txt'));assert.ok(q[0].includes(lang==='zh'?'用中文回答':'answer in English'));assert.equal(new URL(links.find(a=>a.name==='Google AI Mode').href).searchParams.get('udm'),'50');const html=homePage(lang);assert.ok(html.includes('noopener noreferrer nofollow'));assert.ok(html.includes('original-footer'));assert.ok(html.includes('AI &amp; Agent Docs'));}
+  for(const lang of SITE.languages){const links=aiLinks(lang);assert.equal(links.length,5);const q=links.map(a=>new URL(a.href).searchParams.get('q'));assert.equal(new Set(q).size,1);assert.ok(q[0].includes(SITE.origin+'/llms-full.txt'));assert.ok(q[0].includes(lang==='zh'?'用中文回答':'answer in English'));assert.equal(new URL(links.find(a=>a.name==='Google AI Mode').href).searchParams.get('udm'),'50');const html=homePage(lang);assert.ok(html.includes('noopener noreferrer nofollow'));assert.ok(html.includes('original-footer'));assert.ok(html.includes(lang==='nl'?'AI- en agentdocumenten':'AI &amp; Agent Docs'));}
 });
 test('SSR SEO exposes an expandable guide, correct canonical and no crawler-specific cloaking',()=>{
-  const html=homePage();assert.ok(html.includes('<h1 aria-label="Krillion Game'));assert.ok(html.includes('<details id="guide"'));assert.ok(html.includes('https://openkrillion.com/assets/og.png'));
+  const html=homePage();assert.ok(html.includes('<h1 aria-label="FIETSDUIK — OPENKRILLION'));assert.ok(html.includes('<details id="guide"'));assert.ok(html.includes('https://openkrillion.com/assets/og.png'));
   const text=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<[^>]+>/g,' '),words=text.match(/[A-Za-z]+(?:[’'-][A-Za-z]+)*/g),density=words.filter(w=>w.toLowerCase()==='krillion').length/words.length;
   assert.ok(words.length>1500);assert.ok(density>.03);assert.ok(!html.includes('googlebot'));
 });
