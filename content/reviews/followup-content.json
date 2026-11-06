@@ -1,0 +1,15 @@
+{
+  "stage": "content",
+  "kind": "ai",
+  "reviewer": "Codex-followup-content-pass",
+  "questions": [
+    {
+      "questionId": "nl-windrichtingen",
+      "contentHash": "34ec216132420c34c049c50b9bec5b9f30d547dcbc87ab3e86f6174fce5af841",
+      "status": "pass",
+      "issues": [
+        "Acht richtingen afzonderlijk gecontroleerd; afkortingen en fijnere onderverdelingen expliciet uitgesloten. Nog geen onafhankelijke menselijke of externe feitencontrole."
+      ]
+    }
+  ]
+}

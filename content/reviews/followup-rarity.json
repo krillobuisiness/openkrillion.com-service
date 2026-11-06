@@ -1,0 +1,15 @@
+{
+  "stage": "rarity",
+  "kind": "ai",
+  "reviewer": "Codex-followup-rarity-pass",
+  "questions": [
+    {
+      "questionId": "nl-windrichtingen",
+      "contentHash": "34ec216132420c34c049c50b9bec5b9f30d547dcbc87ab3e86f6174fce5af841",
+      "status": "pass",
+      "issues": [
+        "Hoofdrichtingen zijn eerste associaties, tussenrichtingen regelmatig verwacht. Geen 100-puntenantwoord geforceerd; concept blijft buiten de standaardeditie."
+      ]
+    }
+  ]
+}

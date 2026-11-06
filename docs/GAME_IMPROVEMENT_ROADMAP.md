@@ -3,6 +3,13 @@
 De roadmap behoudt zeven rondes, bestaande score/tierwaarden, API-contracten en
 D1-conventies. Elke fase kan onafhankelijk worden getest.
 
+Status 6 november 2026: de gedeelde locale-laag en locale-bewuste browserflow
+zijn aanwezig. [Contentfabriek v1](CONTENT_FACTORY.md) levert nu een offline
+review/compilerroute en lokale, gepinde practice-edities voor B03/B07/B09.
+Dit is nog geen productie-contentrotatie: menselijke review, daily-cohorten,
+history-migratie en expliciete publicatie blijven vervolgwerk. De correction-UX
+is in deze contentopdracht niet opnieuw ontworpen.
+
 ## Fase 1 — Fundamenten en taalfairness
 
 **Doel:** één betrouwbare Nederlandse spelerervaring en eerlijke correcties.

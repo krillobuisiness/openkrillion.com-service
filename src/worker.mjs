@@ -3,6 +3,7 @@ import { documents } from './docs.mjs';
 import { homePage, infoPage } from './html.mjs';
 import { DEMO } from './demo.mjs';
 import { DUTCH } from './dutch.mjs';
+import { editionFor, previewFor, EditionError } from './editions.mjs';
 import { getLocale, localeOf } from '../public/locale.mjs';
 import { TIERS, normalize, matchAnswer, etDate, resetAt, ROUND_MS, PREVIEW_MS } from '../public/rules.mjs';
 
@@ -54,12 +55,16 @@ async function saveSample(env, puzzle) {
   if (puzzle.sample) await env.DB.prepare('INSERT OR IGNORE INTO puzzles(date,day_number,source,content) VALUES(?,?,?,?)').bind(puzzle.date, puzzle.dayNumber, puzzle.source, JSON.stringify(puzzle)).run();
 }
 function promptDTO(puzzle, interfaceLanguage = 'en', answerLanguage = puzzle.language || 'en') {
-  return { date: puzzle.date, dayNumber: puzzle.dayNumber, language: answerLanguage, interfaceLanguage, answerLanguage, sample: !!puzzle.sample, source: puzzle.source, resetsAt: resetAt(puzzle.date), prompts: puzzle.prompts.map(({ id, text }) => ({ id, text })) };
+  return { date: puzzle.date, dayNumber: puzzle.dayNumber, language: answerLanguage, interfaceLanguage, answerLanguage, sample: !!puzzle.sample, source: puzzle.source, ...(puzzle.editionId?{editionId:puzzle.editionId}:{}), resetsAt: resetAt(puzzle.date), prompts: puzzle.prompts.map(({ id, text, originalLanguage, translations }) => ({ id, text, ...(translations?{originalLanguage,translations}:{}) })) };
+}
+async function puzzleForRun(env,run) {
+  const language=answerLanguageOf(run.answer_language || run.language);
+  return run.content_edition_id ? editionFor(env,run.content_edition_id,language,run.date) : puzzleFor(env,run.date,language);
 }
 async function state(env, run) {
   const results = (await env.DB.prepare('SELECT round,raw_answer AS rawAnswer,answer,tier,score FROM answers WHERE run_id=? ORDER BY round').bind(run.id).all()).results;
   const answerLanguage = answerLanguageOf(run.answer_language || run.language);
-  const puzzle = await puzzleFor(env, run.date, answerLanguage);
+  const puzzle = await puzzleForRun(env, run);
   return { ...promptDTO(puzzle, interfaceLanguageOf(run.interface_language || (answerLanguage === 'en' ? 'en' : 'nl')), answerLanguage), runId: run.id, mode: run.mode, round: run.next_round, roundStart: run.round_start, pausedAt: run.paused_at || null, serverNow: Date.now(), completed: !!run.completed, results, score: results.reduce((s, r) => s + r.score, 0) };
 }
 async function ownRun(env, id, player) {
@@ -80,7 +85,8 @@ async function api(request, env, url) {
   if (request.method === 'GET' && path === '/api/today') {
     const interfaceLanguage = interfaceLanguageOf(url.searchParams.get('interfaceLanguage') || url.searchParams.get('lang'));
     const answerLanguage = answerLanguageOf(url.searchParams.get('answerLanguage') || url.searchParams.get('answers') || (interfaceLanguage === 'en' ? 'en' : 'nl'));
-    return json(promptDTO(await puzzleFor(env, date, answerLanguage), interfaceLanguage, answerLanguage));
+    const editionId=url.searchParams.get('edition');
+    return json(promptDTO(editionId!==null?await previewFor(env,editionId,answerLanguage,date):await puzzleFor(env, date, answerLanguage), interfaceLanguage, answerLanguage));
   }
   if (request.method === 'GET' && path === '/api/health') return json({ ok: true, name: SITE.name, database: !!(await env.DB.prepare('SELECT 1 AS ok').first()), storage: !!env.BUCKET });
   if (request.method === 'GET' && path === '/api/state') {
@@ -90,7 +96,7 @@ async function api(request, env, url) {
   if (request.method === 'GET' && path === '/api/review') {
     const run = await ownRun(env, url.searchParams.get('run'), player);
     if (!run?.completed) return fail(L.errors.reviewLocked, 403);
-    const puzzle = await puzzleFor(env, run.date, answerLanguageOf(run.answer_language || run.language));
+    const puzzle = await puzzleForRun(env, run);
     const population = (await env.DB.prepare("SELECT r.id,SUM(a.score) AS score FROM runs r JOIN answers a ON a.run_id=r.id WHERE r.date=? AND r.mode='daily' AND r.completed=1 GROUP BY r.id").bind(run.date).all()).results;
     const own = await state(env, run);
     const others = population.filter(p => p.id !== run.id);
@@ -109,11 +115,13 @@ async function api(request, env, url) {
     const id = player || crypto.randomUUID(), mode = data.practice === true ? 'practice' : 'daily';
     const interfaceLanguage = interfaceLanguageOf(data.interfaceLanguage || data.language || url.searchParams.get('interfaceLanguage') || url.searchParams.get('lang'));
     const answerLanguage = answerLanguageOf(data.answerLanguage || data.answers || data.language || url.searchParams.get('answerLanguage') || url.searchParams.get('answers') || (interfaceLanguage === 'en' ? 'en' : 'nl'));
-    const puzzle = await puzzleFor(env, date, answerLanguage); if (answerLanguage === 'en') await saveSample(env, puzzle);
+    const hasEdition=Object.hasOwn(data,'editionId');
+    if (hasEdition && data.practice!==true) return fail(L.errors.editionPractice,400);
+    const puzzle = hasEdition?await previewFor(env,data.editionId,answerLanguage,date):await puzzleFor(env, date, answerLanguage); if (!hasEdition && answerLanguage === 'en') await saveSample(env, puzzle);
     let run = mode === 'daily' ? await env.DB.prepare("SELECT * FROM runs WHERE player=? AND date=? AND mode='daily' AND interface_language=? AND answer_language=?").bind(id, date, interfaceLanguage, answerLanguage).first() : null;
     if (!run) {
       const rid = crypto.randomUUID();
-      await env.DB.prepare('INSERT OR IGNORE INTO runs(id,player,date,mode,round_start,created_at,language,interface_language,answer_language) VALUES(?,?,?,?,?,?,?,?,?)').bind(rid, id, date, mode, Date.now() + PREVIEW_MS, Date.now(), answerLanguage, interfaceLanguage, answerLanguage).run();
+      await env.DB.prepare('INSERT OR IGNORE INTO runs(id,player,date,mode,round_start,created_at,language,interface_language,answer_language,content_edition_id) VALUES(?,?,?,?,?,?,?,?,?,?)').bind(rid, id, date, mode, Date.now() + PREVIEW_MS, Date.now(), answerLanguage, interfaceLanguage, answerLanguage,hasEdition?puzzle.editionId:null).run();
       run = mode === 'daily' ? await env.DB.prepare("SELECT * FROM runs WHERE player=? AND date=? AND mode='daily' AND interface_language=? AND answer_language=?").bind(id,date,interfaceLanguage,answerLanguage).first() : await ownRun(env,rid,id);
     }
     return json(await state(env, run), 200, { 'Set-Cookie': `ok_player=${id}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000${url.protocol === 'https:' ? '; Secure' : ''}` });
@@ -142,7 +150,7 @@ async function api(request, env, url) {
     if (run.completed || run.round_start === null || data.round !== run.next_round) return json({ state: await state(env, run), alreadyScored: true });
     if (Date.now() < run.round_start && env.LOCAL_DEVELOPMENT !== 'true') return fail(L.errors.answerNotOpen,409);
     const answerLanguage = answerLanguageOf(run.answer_language || run.language);
-    const puzzle = await puzzleFor(env,run.date,answerLanguage), prompt = puzzle.prompts[run.next_round];
+    const puzzle = await puzzleForRun(env,run), prompt = puzzle.prompts[run.next_round];
     const raw = typeof data.answer === 'string' ? data.answer.trim().slice(0,256) : '';
     const late = Date.now() > run.round_start + ROUND_MS;
     // A small network grace period applies only to the client's timed submission.
@@ -185,7 +193,7 @@ export default {
       if (!['GET','HEAD'].includes(request.method)) return headers(fail(getLocale(localeOf(url.searchParams.get('lang'))).errors.method,405));
       const docs = documents();
       if (docs[url.pathname]) return headers(new Response(request.method==='HEAD'?null:docs[url.pathname],{headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'no-cache'}}));
-      if (url.pathname === '/') { const requested = url.searchParams.get('lang'); const lang = ['en','nl','zh'].includes(requested) ? requested : 'nl'; const answers = url.searchParams.get('answers') === 'en' ? 'en' : lang === 'en' ? 'en' : 'nl'; return headers(new Response(request.method==='HEAD'?null:homePage(lang,env,answers),{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-cache'}})); }
+      if (url.pathname === '/') { const requested = url.searchParams.get('lang'); const lang = ['en','nl','zh'].includes(requested) ? requested : 'nl'; const answers = ['en','nl'].includes(url.searchParams.get('answers')) ? url.searchParams.get('answers') : lang === 'en' ? 'en' : 'nl'; return headers(new Response(request.method==='HEAD'?null:homePage(lang,env,answers),{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-cache'}})); }
       if (['/privacy','/about'].includes(url.pathname)) { const lang=localeOf(url.searchParams.get('lang')); return headers(new Response(request.method==='HEAD'?null:infoPage(url.pathname,lang),{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=300'}})); }
       if (url.pathname === '/robots.txt') return headers(new Response('User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://openkrillion.com/sitemap.xml\n',{headers:{'Content-Type':'text/plain; charset=utf-8'}}));
       if (url.pathname === '/sitemap.xml') return headers(new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+['/','/about','/privacy'].map(p=>`<url><loc>${SITE.origin}${p}</loc></url>`).join('')+'</urlset>',{headers:{'Content-Type':'application/xml; charset=utf-8'}}));
@@ -201,7 +209,7 @@ export default {
       }
       const asset = await env.ASSETS.fetch(request);
       return headers(asset, asset.ok ? { 'Cache-Control': url.pathname.endsWith('.woff2') ? 'public, max-age=31536000, immutable' : 'public, max-age=300' } : {});
-    } catch (e) { console.error('Request failed:',e.message); return headers(fail(getLocale(localeOf(url.searchParams.get('lang'))).errors.signal,503)); }
+    } catch (e) { const L=getLocale(localeOf(url.searchParams.get('interfaceLanguage') || url.searchParams.get('lang'))); if(e instanceof EditionError)return headers(fail(L.errors[e.code],e.status)); console.error('Request failed:',e.message); return headers(fail(L.errors.signal,503)); }
   },
   async scheduled(event,env,ctx) { ctx.waitUntil(syncPuzzle(env).catch(e=>console.error('Scheduled reference sync failed:',e.message))); },
 };

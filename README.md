@@ -25,6 +25,26 @@ The included independent sample bank is small and visibly labeled. Production ca
 
 ## Architecture
 
+### Local content factory (v1)
+
+An offline brief/import/validate/review/compile workflow is available for new
+Dutch content. The pilot contains 21 model-authored drafts and one seven-question,
+AI-reviewed **local practice** edition. It is not human-approved production content.
+Existing Dutch/English daily banks remain unchanged; no paid model API is required.
+
+```sh
+npm run db:local
+npm run content -- preview --file content/editions/pilot-nl-v1.json
+```
+
+Open the printed preview URL with the local server running. See the
+[full workflow and schema](docs/CONTENT_FACTORY.md) and
+[pilot report](docs/CONTENT_FACTORY_PILOT.md). `npm run check` includes offline
+content checks; `npm run test:content-browser` plays all four UI/answer-language
+combinations against local editions. This command never targets production.
+
+### Game service
+
 ```text
 Browser: canvas ocean + HTML game + Web Audio
                  |

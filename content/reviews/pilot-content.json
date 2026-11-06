@@ -1,0 +1,196 @@
+{
+  "stage": "content",
+  "kind": "ai",
+  "reviewer": "Codex-content-pass-2",
+  "questions": [
+    {
+      "questionId": "nl-instrumenten",
+      "contentHash": "621096b1689f7d963d048d2057aa523fd2e88899255b199682ff4c4dddc3080d",
+      "status": "pass",
+      "issues": [
+        "Erhu en shamisen zijn valide maar ontbreken nog: open lijst blijft expliciet gedeeltelijk. Instrumentnamen, geen merken; theremin blijft een voorspelbare zeldzaamzoekkeuze.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-mineralen",
+      "contentHash": "c958a7fc83e08011c82079e697917d19242a6da230c11168a007cdae53d79b20",
+      "status": "pass",
+      "issues": [
+        "Amethist en robijn bewust niet apart: variëteiten, geen eigen mineraalsoorten. Veldspaat en biotiet uitgesloten als groepen. Rutiel en ilmeniet zijn bekende ontbrekende soorten. Nederlandse spelling benitoiet verdient onafhankelijke taalcontrole.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-bloemonderdelen",
+      "contentHash": "813d710bc7bc294501822d8e9e7b577924091062ae02d39c28899be707ed4c34",
+      "status": "pass",
+      "issues": [
+        "Connectivum en helmbindsel delen één identiteit. Kroon en bloemkroon eveneens. Bloembeker ontbreekt nog; microscopische onderdelen maken dit een open anatomische categorie.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-stijlfiguren",
+      "contentHash": "30895f25d4349d10b0d5bdfff5bebb3c31da6736d009d59db74f7a4a9b7c673e",
+      "status": "pass",
+      "issues": [
+        "Epanadiplosis niet als tweede identiteit toegevoegd: terminologische overlap met anadiplosis in geraadpleegd lexicon. Antonomasie ontbreekt nog. Apokoinou telt alleen als bewust stijlmiddel, niet elke grammaticale fout.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-vlakke-krommen",
+      "contentHash": "d323f11dd2690e60fbeea87a121c8ad284b2010d6f091e35183ee92a91f7ff67",
+      "status": "pass",
+      "issues": [
+        "Algemene families en specifieke subtypen zijn toegestaan; geen losse formule als nieuw antwoord. Folium van Descartes ontbreekt. Nefroïde/nephroïde zijn dezelfde identiteit; onafhankelijke Nederlandse vaktermreview nodig.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-zeilschepen",
+      "contentHash": "acffc46c2e8dcb9a6917aba60ed0310c24f1a4fabc629f66ccbd9c77e905c529",
+      "status": "pass",
+      "issues": [
+        "Historische zeiluitvoering expliciet gemaakt om motor-kotters/sloepen niet als tegenvoorbeeld te gebruiken. Individuele namen afgewezen. Dhow en felucca ontbreken; geen complete scheepstypencatalogus.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-lichtverschijnselen",
+      "contentHash": "4a87c5eb90d6be6eea7aae814bbd2050b29a51ef80b1837d03a27459f36a9b6b",
+      "status": "pass",
+      "issues": [
+        "Poollicht en bliksem uitgesloten wegens de zon-/maanlichtvoorwaarde. Boog van Parry en parryboog delen één score. Bijmaan en mistboog ontbreken. KNMI-verificatie beperkt tot daadwerkelijk gelezen zoekpassage.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-weekdagen",
+      "contentHash": "df16ef63404e4a77355d7e3df57da1f35ffdff3f3a96eafcc4bf00d6b132af0a",
+      "status": "pass",
+      "issues": [
+        "Gesloten opsomming van zeven dagen gecontroleerd; geen afkortingsaliassen nodig.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-maanden",
+      "contentHash": "57826199a513d5f52e78bc977e243bc19676afa8ae7f05eb45b9d85edd505150",
+      "status": "pass",
+      "issues": [
+        "Twaalf kalendermaanden gecontroleerd; geen seizoenen of afkortingen.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-seizoenen",
+      "contentHash": "a21f4844a027e78a867312e04e043df1e301ffed35049caecbd157db8f285129",
+      "status": "pass",
+      "issues": [
+        "Voorjaar/lente en najaar/herfst zijn één concept; geen aparte zeldzaamheid voor regionale woorden.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-schaakstukken",
+      "contentHash": "b87569a8bd97681237626c6bfa4997ecb963dabc90cc5e8ab89b45ac11f10c51",
+      "status": "pass",
+      "issues": [
+        "Pion expliciet toegestaan in prompt om terminologische discussie over schaakstukken te vermijden. Dame/koningin één concept.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-kaartkleuren",
+      "contentHash": "4ea836811d4b7dbedda89554ce87e387d6f59727f7704dc744c094e1c785d94c",
+      "status": "pass",
+      "issues": [
+        "Franse kleuren; rood/zwart uitgesloten. Enkelvoudsvormen verwijzen naar dezelfde kaartkleur.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-regenboogkleuren",
+      "contentHash": "2398ae8718394a8620dadac5aadc923df96befc6ff11929ae82b29211e6f85ba",
+      "status": "pass",
+      "issues": [
+        "Traditionele zevennamenconventie expliciet; niet beweren dat het spectrum uit zeven afzonderlijke kleuren bestaat.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-provincies",
+      "contentHash": "7ca773f813771f64cad36f6a33f96a7455cfc8709d290265a8bef481134a8147",
+      "status": "pass",
+      "issues": [
+        "Twaalf provincies, geen steden of gewesten. Bestuurlijke indeling blijft onderhoudbaar feitenmateriaal, geen eeuwige waarheid.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-romeinse-symbolen",
+      "contentHash": "6922f9349e4723303955f7fe0e0044e9aa3559866c39fe480c33f3a7ddaebc91",
+      "status": "pass",
+      "issues": [
+        "Eén letter vereist door de categorie; combinaties zoals IV zijn geen extra canonieke tekens.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-si-basiseenheden",
+      "contentHash": "28a0afd9c5f5b748aef71297eb799514a2d4cbcbd307875a6429fac01137ed32",
+      "status": "pass",
+      "issues": [
+        "Alle zeven eenheidsnamen, niet de grootheden. Symbolen uitgesloten door prompt. Ampère wordt volgens bestaande normalisatie accentongevoelig.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-klinkerletters",
+      "contentHash": "c80fe82e559e900ae45862c8b1f323dc37cf3172e525f344d391630ed901fef9",
+      "status": "fail",
+      "issues": [
+        "Technisch speelbaar maar prompt geeft alle antwoorden weg; didactisch concept, niet geschikt voor de standaardeditie.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-veelhoeken",
+      "contentHash": "dad1e40441c79e0c49f913a3c18dbb3e3054913a1d061412170d06fad878d450",
+      "status": "pass",
+      "issues": [
+        "Vierkant/ruit uitgesloten omdat de algemene naam per aantal zijden wordt gevraagd; tetragoon en vierhoek gelijkwaardig.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-planeten",
+      "contentHash": "f0c1a5d1276017c751ab8bd4782afa6704bdf85310ac1ed1a82758e96acee24c",
+      "status": "pass",
+      "issues": [
+        "Achtplanetenindeling expliciet; Pluto uitgesloten. Geen vertaling van Nederlandse planeetnamen naar Engelse antwoorden.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-vlagkleuren",
+      "contentHash": "472539f205f150f87cc9087c210aede42497f3aec1f0684733f8aef4ca889689",
+      "status": "pass",
+      "issues": [
+        "Wimpel en historische vlagvarianten expliciet uitgesloten; oranje telt niet.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    },
+    {
+      "questionId": "nl-keuken-vier",
+      "contentHash": "5f24032914c83c782bbd252eb34a886320389a79980d1b8828f6ef9bdaa2eff6",
+      "status": "pass",
+      "issues": [
+        "Alle zes woorden en hun invoer bestaan uit vier genormaliseerde letters. Bord en tang zijn breed maar normale keukenvoorwerpen. Geen claim op volledige dekking.",
+        "AI-review voor lokale proef; geen menselijke goedkeuring en geen volledige externe feitencontrole."
+      ]
+    }
+  ]
+}

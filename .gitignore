@@ -7,4 +7,5 @@ node_modules/
 wrangler.production.jsonc
 output/
 private/
+content/work/
 .DS_Store

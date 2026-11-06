@@ -1,5 +1,11 @@
 # FIETSDUIK — geprioriteerde feature backlog
 
+Status 6 november 2026: B01/B05 zijn eerder geïmplementeerd; B03/B07/B09 hebben
+nu een lokale basis via [Contentfabriek v1](CONTENT_FACTORY.md). De oorspronkelijke
+bevindingen hieronder blijven historische context, niet een verklaring dat deze
+problemen allemaal nog onveranderd bestaan. Productiecontent en onafhankelijke
+redactie vallen nog niet onder de opgeleverde lokale pilot.
+
 ## Prioriteitsregels
 
 - **P0:** kritieke bug, fairness- of toegankelijkheidsprobleem.

@@ -15,6 +15,11 @@ for (const [nl, en] of [
 ]) EN_FROM_NL.set(nl, en);
 export function promptText(prompt, interfaceLanguage = 'nl', answerLanguage = 'nl') {
   const raw = prompt?.text || '';
+  if (prompt?.translations) {
+    const text=prompt.translations[interfaceLanguage] || raw;
+    if (interfaceLanguage===answerLanguage) return text;
+    return text+(interfaceLanguage==='nl'?' (antwoord in het Engels)':' (answer in Dutch)');
+  }
   if (interfaceLanguage === 'en') return EN_FROM_NL.get(raw) || raw;
   const translated = NL.prompts.get(raw) || raw;
   if (answerLanguage !== 'en') return translated;

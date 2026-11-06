@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "batchId": "followup-nl-v1",
+  "generationMethod": "model-authored",
+  "promptTemplateVersion": "generator-v1",
+  "questions": [
+    {
+      "questionId": "nl-windrichtingen",
+      "version": 1,
+      "text": "Noem een windrichting uit de achtstrekenroos.",
+      "originalLanguage": "nl",
+      "answerLanguage": "nl",
+      "translations": {
+        "en": {
+          "text": "Name a compass direction on the eight-point compass rose.",
+          "status": "ai-reviewed"
+        }
+      },
+      "category": "geography",
+      "difficulty": "medium",
+      "audience": "Nederlandstalige algemene kennisspelers; gangbare Vlaamse varianten welkom",
+      "scope": {
+        "include": "Noord, noordoost, oost, zuidoost, zuid, zuidwest, west en noordwest.",
+        "exclude": "Afkortingen, graden en fijnere onderverdelingen zoals noordnoordoost."
+      },
+      "constraints": {
+        "type": "listed"
+      },
+      "coverage": {
+        "type": "closed",
+        "status": "claimed-complete",
+        "knownMissing": [],
+        "notes": "Acht benoemde richtingen, geen verdedigbare 100-puntenkeuze."
+      },
+      "answers": [
+        {
+          "answerId": "nl-windrichtingen-a1",
+          "conceptId": "nl-windrichtingen-a1",
+          "answer": "noord",
+          "aliases": [],
+          "tier": "plankton",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Hoofdrichting; zeer voor de hand liggend. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        },
+        {
+          "answerId": "nl-windrichtingen-a2",
+          "conceptId": "nl-windrichtingen-a2",
+          "answer": "noordoost",
+          "aliases": [],
+          "tier": "schooler",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Tussenrichting; iets minder eerste associatie dan een hoofdrichting. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        },
+        {
+          "answerId": "nl-windrichtingen-a3",
+          "conceptId": "nl-windrichtingen-a3",
+          "answer": "oost",
+          "aliases": [],
+          "tier": "plankton",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Hoofdrichting; zeer voor de hand liggend. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        },
+        {
+          "answerId": "nl-windrichtingen-a4",
+          "conceptId": "nl-windrichtingen-a4",
+          "answer": "zuidoost",
+          "aliases": [],
+          "tier": "schooler",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Tussenrichting; iets minder eerste associatie dan een hoofdrichting. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        },
+        {
+          "answerId": "nl-windrichtingen-a5",
+          "conceptId": "nl-windrichtingen-a5",
+          "answer": "zuid",
+          "aliases": [],
+          "tier": "plankton",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Hoofdrichting; zeer voor de hand liggend. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        },
+        {
+          "answerId": "nl-windrichtingen-a6",
+          "conceptId": "nl-windrichtingen-a6",
+          "answer": "zuidwest",
+          "aliases": [],
+          "tier": "schooler",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Tussenrichting; iets minder eerste associatie dan een hoofdrichting. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        },
+        {
+          "answerId": "nl-windrichtingen-a7",
+          "conceptId": "nl-windrichtingen-a7",
+          "answer": "west",
+          "aliases": [],
+          "tier": "plankton",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Hoofdrichting; zeer voor de hand liggend. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        },
+        {
+          "answerId": "nl-windrichtingen-a8",
+          "conceptId": "nl-windrichtingen-a8",
+          "answer": "noordwest",
+          "aliases": [],
+          "tier": "schooler",
+          "rarity": {
+            "source": "ai_estimate",
+            "methodVersion": "choice-in-25s-v1",
+            "confidence": "medium",
+            "reason": "Tussenrichting; iets minder eerste associatie dan een hoofdrichting. Geen gemeten frequentie."
+          },
+          "evidence": {
+            "status": "pending",
+            "sources": []
+          }
+        }
+      ],
+      "reviews": {
+        "technical": {
+          "validator": {
+            "status": "pass",
+            "contentHash": "34ec216132420c34c049c50b9bec5b9f30d547dcbc87ab3e86f6174fce5af841",
+            "reviewer": "content-validator-v1",
+            "issues": []
+          }
+        },
+        "content": {
+          "ai": {
+            "contentHash": "34ec216132420c34c049c50b9bec5b9f30d547dcbc87ab3e86f6174fce5af841",
+            "status": "pass",
+            "issues": [
+              "Acht richtingen afzonderlijk gecontroleerd; afkortingen en fijnere onderverdelingen expliciet uitgesloten. Nog geen onafhankelijke menselijke of externe feitencontrole."
+            ],
+            "reviewer": "Codex-followup-content-pass"
+          }
+        },
+        "rarity": {
+          "ai": {
+            "contentHash": "34ec216132420c34c049c50b9bec5b9f30d547dcbc87ab3e86f6174fce5af841",
+            "status": "pass",
+            "issues": [
+              "Hoofdrichtingen zijn eerste associaties, tussenrichtingen regelmatig verwacht. Geen 100-puntenantwoord geforceerd; concept blijft buiten de standaardeditie."
+            ],
+            "reviewer": "Codex-followup-rarity-pass"
+          }
+        }
+      },
+      "contentHash": "34ec216132420c34c049c50b9bec5b9f30d547dcbc87ab3e86f6174fce5af841"
+    }
+  ]
+}

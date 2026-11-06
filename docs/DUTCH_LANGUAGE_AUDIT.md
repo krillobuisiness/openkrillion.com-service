@@ -1,5 +1,11 @@
 # FIETSDUIK — Nederlandse taal- en fairness-audit
 
+> Historische audit. De gedeelde SSR/client-locale-laag is inmiddels aanwezig.
+> Nieuwe Contentfabriek-edities gebruiken expliciete vraagvertalingen en vastgezette
+> antwoordtalen; de hieronder beschreven tekstmap blijft alleen legacyfallback.
+> Zie [het actuele contract en de beperkingen](CONTENT_FACTORY.md). De legacybanken
+> en hun inhoudelijke onzekerheden zijn niet stilzwijgend aangepast.
+
 ## Samenvatting
 
 De Nederlandse versie heeft een echte onafhankelijke answer-bank en de

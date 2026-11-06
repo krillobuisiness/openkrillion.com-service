@@ -1,7 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { DatabaseSync } from 'node:sqlite';
-import { readFileSync } from 'node:fs';
+import { service } from './helpers.mjs';
 import worker, { validateReference } from '../src/worker.mjs';
 import { DEMO } from '../src/demo.mjs';
 import { DUTCH } from '../src/dutch.mjs';
@@ -10,28 +9,6 @@ import { documents, aiLinks } from '../src/docs.mjs';
 import { etDate, resetAt, normalize, matchAnswer, TIERS } from '../public/rules.mjs';
 import { homePage, infoPage } from '../src/html.mjs';
 import { getLocale, missingTranslations, translate } from '../public/locale.mjs';
-
-function database(){
-  const db=new DatabaseSync(':memory:');
-  db.exec(readFileSync(new URL('../migrations/0001_initial.sql',import.meta.url),'utf8'));
-  db.exec(readFileSync(new URL('../migrations/0002_pause.sql',import.meta.url),'utf8'));
-  db.exec(readFileSync(new URL('../migrations/0003_language.sql',import.meta.url),'utf8'));
-  db.exec(readFileSync(new URL('../migrations/0004_daily_language_index.sql',import.meta.url),'utf8'));
-  db.exec(readFileSync(new URL('../migrations/0005_interface_answer_languages.sql',import.meta.url),'utf8'));
-  const prepare=sql=>({
-    bind(...args){
-      const s=db.prepare(sql);
-      return {
-        async first(){return s.get(...args)||null},
-        async all(){return {results:s.all(...args)}},
-        async run(){const r=s.run(...args);return {success:true,meta:{changes:Number(r.changes)}}},
-      };
-    },
-    async first(){return db.prepare(sql).get()||null},
-  });
-  return{prepare,async batch(statements){db.exec('BEGIN');try{const r=[];for(const s of statements)r.push(await s.run());db.exec('COMMIT');return r}catch(e){db.exec('ROLLBACK');throw e}},close:()=>db.close()};
-}
-function service(){const env={DB:database(),BUCKET:{put:async()=>{},get:async()=>null},LOCAL_DEVELOPMENT:'true',REFERENCE_SYNC:'false',ASSETS:{fetch:async()=>new Response('not found',{status:404})}};let cookie='';return{env,async call(path,data,extra={}){const r=await worker.fetch(new Request('http://localhost:3051'+path,{...(data===undefined?{}:{method:'POST',body:JSON.stringify(data),headers:{'Content-Type':'application/json','Cookie':cookie,...extra}}),...(data===undefined?{headers:{Cookie:cookie,...extra}}:{})}),env,{});if(r.headers.get('Set-Cookie'))cookie=r.headers.get('Set-Cookie').split(';')[0];return{status:r.status,body:await r.json()}},cookie:()=>cookie};}
 
 test('New York reset follows DST rather than device midnight',()=>{
   assert.equal(etDate(Date.parse('2026-10-17T03:59:59Z')),'2026-10-16');
@@ -47,7 +24,7 @@ test('answer matching normalizes accents, uses known aliases and avoids short fu
   assert.equal(matchAnswer('xyz',DEMO.prompts[3].answers),null);
   assert.equal(matchAnswer('zzzzzzzzzz',DEMO.prompts[0].answers),null);
 });
-test('Dutch bank is independent, complete and validates its four-letter puzzle',()=>{
+test('Dutch legacy bank is independent and structurally valid; four-letter constraints hold',()=>{
   assert.equal(DUTCH.language,'nl');
   assert.equal(DUTCH.prompts.length,7);
   const ids=new Set(DUTCH.prompts.map(p=>p.id));

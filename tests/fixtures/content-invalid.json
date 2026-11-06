@@ -1,0 +1,10 @@
+[
+  {"name":"duplicate alias","change":"alias-collision","expected":"alias-collision"},
+  {"name":"built-in matcher alias collision","change":"implicit-alias","expected":"alias-collision"},
+  {"name":"unknown tier","change":"tier","expected":"tier"},
+  {"name":"empty answer list","change":"answers","expected":"answers"},
+  {"name":"unsupported constraint","change":"constraint","expected":"constraint"},
+  {"name":"stale review hash","change":"review","expected":"review"},
+  {"name":"unsafe player text","change":"unsafe","expected":"language"},
+  {"name":"duplicate canonical concept","change":"concept","expected":"concept"}
+]

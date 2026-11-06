@@ -1,10 +1,15 @@
 # Nederlandse woordbank — audit en implementatierapport
 
+> Status 6 november 2026: dit rapport beschrijft de ongewijzigde legacybank.
+> Daarnaast is [Contentfabriek v1](CONTENT_FACTORY.md) beschikbaar voor expliciete
+> lokale practice-edities. Zie [de pilotrapportage](CONTENT_FACTORY_PILOT.md).
+> Hieronder genoemde oude testresultaten zijn historische resultaten.
+
 ## Samenvatting
 
 KRILLO heeft nu een zelfstandige Nederlandse voorbeeldbank met zeven speelbare puzzels. De Nederlandse sessie gebruikt eigen prompts, canonical answers, aliassen, validatieregels en redactionele rariteit. De Engelse DEMO-bank en de bestaande referentie-import blijven afzonderlijk beschikbaar.
 
-De bank is inhoudelijk handmatig samengesteld voor deze implementatie. De rariteit is een redactionele inschatting; er is geen responsfrequentiedataset waarmee de tiers statistisch zijn gemeten.
+De bank is tijdens de eerdere implementatie samengesteld; dat is geen bewijs van onafhankelijke menselijke redactie. De rariteit is een redactionele inschatting; er is geen responsfrequentiedataset waarmee de tiers statistisch zijn gemeten.
 
 ## Bestaande architectuur
 
@@ -41,7 +46,7 @@ Totalen:
 - Opnieuw ontworpen: 2.
 - Nederlandse canonical answers: 263.
 - Gemiddeld: 37,6 answers per puzzel.
-- Onvoldoende dekking: 1 puzzel (`nl-p4` heeft 14 valide elementen; de chemische categorie kan niet verantwoord met 30 worden opgevuld).
+- De 14 elementen van `nl-p4` vormen een gesloten categorie. Het aantal alleen bewijst geen onvoldoende dekking; een universeel minimum van 30 is hier onjuist. Inhoudelijke volledigheid moet per categorie worden beoordeeld.
 
 ## Antwoordmodel
 
@@ -85,7 +90,7 @@ De bestaande Engelse validatie zonder deze metadata blijft ongewijzigd.
 
 ## Niet automatisch bewezen
 
-De Nederlandse antwoorden zijn met de hand samengesteld, maar nog niet door een onafhankelijke Nederlandse taalredacteur of lexicografische bron nagekeken. Vooral samenstellingen, stationscategorieën, stedenlijst en superheldenteams verdienen een menselijke contentreview voordat de bank als productiecontent wordt beschouwd.
+De Nederlandse antwoorden zijn nog niet door een onafhankelijke Nederlandse taalredacteur of lexicografische bron nagekeken. Vooral samenstellingen, stationscategorieën, stedenlijst en superheldenteams verdienen een menselijke contentreview voordat de bank als productiecontent wordt beschouwd.
 
 Het aantal antwoorden dat daarom nog handmatige review nodig heeft: **263**. Dit betekent niet dat alle 263 fout zijn; het betekent dat ze nog niet extern redactioneel zijn goedgekeurd.
 

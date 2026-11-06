@@ -87,6 +87,19 @@ export const CATALOG = {
   },
 };
 
+Object.assign(CATALOG.en.errors, {
+  editionUnavailable: 'This dive’s content version is missing or damaged. It cannot be replaced. Contact the local editor.',
+  editionLanguage: 'This edition uses a different answer language. Open the preview link supplied by the editor.',
+  editionPreviewDisabled: 'Content previews are only available in local development.',
+  editionPractice: 'Content previews can only be played in practice mode.',
+});
+Object.assign(CATALOG.nl.errors, {
+  editionUnavailable: 'De inhoudsversie van deze duik ontbreekt of is beschadigd. We vervangen de vragen niet. Neem contact op met de lokale redacteur.',
+  editionLanguage: 'Deze editie gebruikt een andere antwoordtaal. Open de voorbeeldlink van de redacteur.',
+  editionPreviewDisabled: 'Conceptedities zijn alleen beschikbaar in de lokale ontwikkelomgeving.',
+  editionPractice: 'Conceptedities kun je alleen in de oefenstand spelen.',
+});
+
 // Prompt copy is interface text, while the answer banks remain in their
 // language-specific content modules. Keeping the prompt map here lets SSR and
 // the browser make the same choice without translating answer data.

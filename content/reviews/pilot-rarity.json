@@ -1,0 +1,196 @@
+{
+  "stage": "rarity",
+  "kind": "ai",
+  "reviewer": "Codex-rarity-consistency-pass-2",
+  "questions": [
+    {
+      "questionId": "nl-instrumenten",
+      "contentHash": "621096b1689f7d963d048d2057aa523fd2e88899255b199682ff4c4dddc3080d",
+      "status": "pass",
+      "issues": [
+        "100-puntenoptie opnieuw afgewogen tegen gewone en voorspelbaar obscure antwoorden. Geldigheid is met een bron ondersteund; gedragszeldzaamheid blijft laagzekere AI-inschatting.",
+        "Geen empirische percentages. Synoniemen delen exact dezelfde tier. Menselijke kalibratie blijft nodig."
+      ]
+    },
+    {
+      "questionId": "nl-mineralen",
+      "contentHash": "c958a7fc83e08011c82079e697917d19242a6da230c11168a007cdae53d79b20",
+      "status": "pass",
+      "issues": [
+        "100-puntenoptie opnieuw afgewogen tegen gewone en voorspelbaar obscure antwoorden. Geldigheid is met een bron ondersteund; gedragszeldzaamheid blijft laagzekere AI-inschatting.",
+        "Geen empirische percentages. Synoniemen delen exact dezelfde tier. Menselijke kalibratie blijft nodig."
+      ]
+    },
+    {
+      "questionId": "nl-bloemonderdelen",
+      "contentHash": "813d710bc7bc294501822d8e9e7b577924091062ae02d39c28899be707ed4c34",
+      "status": "pass",
+      "issues": [
+        "100-puntenoptie opnieuw afgewogen tegen gewone en voorspelbaar obscure antwoorden. Geldigheid is met een bron ondersteund; gedragszeldzaamheid blijft laagzekere AI-inschatting.",
+        "Geen empirische percentages. Synoniemen delen exact dezelfde tier. Menselijke kalibratie blijft nodig."
+      ]
+    },
+    {
+      "questionId": "nl-stijlfiguren",
+      "contentHash": "30895f25d4349d10b0d5bdfff5bebb3c31da6736d009d59db74f7a4a9b7c673e",
+      "status": "pass",
+      "issues": [
+        "100-puntenoptie opnieuw afgewogen tegen gewone en voorspelbaar obscure antwoorden. Geldigheid is met een bron ondersteund; gedragszeldzaamheid blijft laagzekere AI-inschatting.",
+        "Geen empirische percentages. Synoniemen delen exact dezelfde tier. Menselijke kalibratie blijft nodig."
+      ]
+    },
+    {
+      "questionId": "nl-vlakke-krommen",
+      "contentHash": "d323f11dd2690e60fbeea87a121c8ad284b2010d6f091e35183ee92a91f7ff67",
+      "status": "pass",
+      "issues": [
+        "100-puntenoptie opnieuw afgewogen tegen gewone en voorspelbaar obscure antwoorden. Geldigheid is met een bron ondersteund; gedragszeldzaamheid blijft laagzekere AI-inschatting.",
+        "Geen empirische percentages. Synoniemen delen exact dezelfde tier. Menselijke kalibratie blijft nodig."
+      ]
+    },
+    {
+      "questionId": "nl-zeilschepen",
+      "contentHash": "acffc46c2e8dcb9a6917aba60ed0310c24f1a4fabc629f66ccbd9c77e905c529",
+      "status": "pass",
+      "issues": [
+        "100-puntenoptie opnieuw afgewogen tegen gewone en voorspelbaar obscure antwoorden. Geldigheid is met een bron ondersteund; gedragszeldzaamheid blijft laagzekere AI-inschatting.",
+        "Geen empirische percentages. Synoniemen delen exact dezelfde tier. Menselijke kalibratie blijft nodig."
+      ]
+    },
+    {
+      "questionId": "nl-lichtverschijnselen",
+      "contentHash": "4a87c5eb90d6be6eea7aae814bbd2050b29a51ef80b1837d03a27459f36a9b6b",
+      "status": "pass",
+      "issues": [
+        "100-puntenoptie opnieuw afgewogen tegen gewone en voorspelbaar obscure antwoorden. Geldigheid is met een bron ondersteund; gedragszeldzaamheid blijft laagzekere AI-inschatting.",
+        "Geen empirische percentages. Synoniemen delen exact dezelfde tier. Menselijke kalibratie blijft nodig."
+      ]
+    },
+    {
+      "questionId": "nl-weekdagen",
+      "contentHash": "df16ef63404e4a77355d7e3df57da1f35ffdff3f3a96eafcc4bf00d6b132af0a",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-maanden",
+      "contentHash": "57826199a513d5f52e78bc977e243bc19676afa8ae7f05eb45b9d85edd505150",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-seizoenen",
+      "contentHash": "a21f4844a027e78a867312e04e043df1e301ffed35049caecbd157db8f285129",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-schaakstukken",
+      "contentHash": "b87569a8bd97681237626c6bfa4997ecb963dabc90cc5e8ab89b45ac11f10c51",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-kaartkleuren",
+      "contentHash": "4ea836811d4b7dbedda89554ce87e387d6f59727f7704dc744c094e1c785d94c",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-regenboogkleuren",
+      "contentHash": "2398ae8718394a8620dadac5aadc923df96befc6ff11929ae82b29211e6f85ba",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-provincies",
+      "contentHash": "7ca773f813771f64cad36f6a33f96a7455cfc8709d290265a8bef481134a8147",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-romeinse-symbolen",
+      "contentHash": "6922f9349e4723303955f7fe0e0044e9aa3559866c39fe480c33f3a7ddaebc91",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-si-basiseenheden",
+      "contentHash": "28a0afd9c5f5b748aef71297eb799514a2d4cbcbd307875a6429fac01137ed32",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-klinkerletters",
+      "contentHash": "c80fe82e559e900ae45862c8b1f323dc37cf3172e525f344d391630ed901fef9",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-veelhoeken",
+      "contentHash": "dad1e40441c79e0c49f913a3c18dbb3e3054913a1d061412170d06fad878d450",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-planeten",
+      "contentHash": "f0c1a5d1276017c751ab8bd4782afa6704bdf85310ac1ed1a82758e96acee24c",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-vlagkleuren",
+      "contentHash": "472539f205f150f87cc9087c210aede42497f3aec1f0684733f8aef4ca889689",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    },
+    {
+      "questionId": "nl-keuken-vier",
+      "contentHash": "5f24032914c83c782bbd252eb34a886320389a79980d1b8828f6ef9bdaa2eff6",
+      "status": "pass",
+      "issues": [
+        "Geen verdedigbare 100-puntenoptie voor deze korte of eenvoudige categorie. Niet ophogen; blijft buiten de 700-puntenstandaardeditie.",
+        "Tweede consistentiepass verandert de voorgestelde tiers niet; dit is geen onafhankelijk menselijk oordeel."
+      ]
+    }
+  ]
+}

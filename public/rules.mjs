@@ -58,12 +58,16 @@ function typoDistance(a, b, limit, language) {
   }
   return base;
 }
+// Shared with the offline content validator: keep the effective alias space identical.
+export function answerVariants(answer) {
+  const commonAliases = { mashedpotatoes: ['mashed', 'mash'], frenchfries: ['fries'], bakedpotato: ['baked potato', 'jacket potato'] };
+  return [answer.answer, ...(answer.aliases || []), ...(commonAliases[normalize(answer.answer)] || [])];
+}
 export function matchAnswer(input, answers, validation = null, language = 'en') {
   const key = normalize(input);
   if (!key || key.length > 256) return null;
   if (validation?.type === 'canonical-length' && key.length !== validation.length) return null;
-  const commonAliases = { mashedpotatoes: ['mashed', 'mash'], frenchfries: ['fries'], bakedpotato: ['baked potato', 'jacket potato'] };
-  const entries = answers.flatMap(a => [a.answer, ...(a.aliases || []), ...(commonAliases[normalize(a.answer)] || [])].map(word => ({ word, a, key: normalize(word) }))).filter(e => validation?.type !== 'canonical-length' || e.a.answer && normalize(e.a.answer).length === validation.length);
+  const entries = answers.flatMap(a => answerVariants(a).map(word => ({ word, a, key: normalize(word) }))).filter(e => validation?.type !== 'canonical-length' || e.a.answer && normalize(e.a.answer).length === validation.length);
   const exact = entries.find(e => e.key === key);
   if (exact) return { ...exact.a, correction: key !== normalize(exact.a.answer) };
   const allowance = key.length < 4 ? 0 : key.length < 8 ? 1 : 2;

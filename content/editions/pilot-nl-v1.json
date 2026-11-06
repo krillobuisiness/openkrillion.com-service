@@ -1,0 +1,1292 @@
+{
+  "schemaVersion": 1,
+  "answerLanguage": "nl",
+  "date": "2026-11-06",
+  "seed": "pilot-v1",
+  "source": "Contentfabriek v1 · model-authored · AI-reviewed · local preview",
+  "maximumScore": 700,
+  "prompts": [
+    {
+      "id": "nl-lichtverschijnselen",
+      "version": 1,
+      "contentHash": "4a87c5eb90d6be6eea7aae814bbd2050b29a51ef80b1837d03a27459f36a9b6b",
+      "text": "Noem een optisch verschijnsel in de atmosfeer dat door zon- of maanlicht ontstaat.",
+      "language": "nl",
+      "originalLanguage": "nl",
+      "translations": {
+        "en": "Name an atmospheric optical phenomenon caused by sunlight or moonlight."
+      },
+      "validation": {
+        "type": "listed"
+      },
+      "answers": [
+        {
+          "answerId": "nl-lichtverschijnselen-a001",
+          "answer": "regenboog",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a002",
+          "answer": "halo",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a003",
+          "answer": "bijzon",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a004",
+          "answer": "luchtspiegeling",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a005",
+          "answer": "lichtzuil",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a006",
+          "answer": "groene flits",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a007",
+          "answer": "corona",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a008",
+          "answer": "glorie",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a009",
+          "answer": "circumzenitale boog",
+          "tier": "rare",
+          "aliases": [
+            "circumzenithale boog"
+          ]
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a010",
+          "answer": "irisatie",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a011",
+          "answer": "circumhorizontale boog",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a012",
+          "answer": "onderzon",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a013",
+          "answer": "parhelische kring",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a014",
+          "answer": "bovenraakboog",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a015",
+          "answer": "benedenraakboog",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-lichtverschijnselen-a016",
+          "answer": "parryboog",
+          "tier": "krillion",
+          "aliases": [
+            "boog van Parry"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nl-instrumenten",
+      "version": 1,
+      "contentHash": "621096b1689f7d963d048d2057aa523fd2e88899255b199682ff4c4dddc3080d",
+      "text": "Noem een muziekinstrument.",
+      "language": "nl",
+      "originalLanguage": "nl",
+      "translations": {
+        "en": "Name a musical instrument."
+      },
+      "validation": {
+        "type": "listed"
+      },
+      "answers": [
+        {
+          "answerId": "nl-instrumenten-a001",
+          "answer": "piano",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a002",
+          "answer": "gitaar",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a003",
+          "answer": "viool",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a004",
+          "answer": "drumstel",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a005",
+          "answer": "fluit",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a006",
+          "answer": "trompet",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a007",
+          "answer": "cello",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a008",
+          "answer": "contrabas",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a009",
+          "answer": "harp",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a010",
+          "answer": "klarinet",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a011",
+          "answer": "hobo",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a012",
+          "answer": "fagot",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a013",
+          "answer": "trombone",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a014",
+          "answer": "tuba",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a015",
+          "answer": "saxofoon",
+          "tier": "schooler",
+          "aliases": [
+            "sax"
+          ]
+        },
+        {
+          "answerId": "nl-instrumenten-a016",
+          "answer": "accordeon",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a017",
+          "answer": "orgel",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a018",
+          "answer": "blokfluit",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a019",
+          "answer": "tamboerijn",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a020",
+          "answer": "triangel",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a021",
+          "answer": "xylofoon",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a022",
+          "answer": "theremin",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a023",
+          "answer": "didgeridoo",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a024",
+          "answer": "klavecimbel",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a025",
+          "answer": "mandoline",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a026",
+          "answer": "banjo",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a027",
+          "answer": "luit",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a028",
+          "answer": "sitar",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a029",
+          "answer": "tabla",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a030",
+          "answer": "marimba",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a031",
+          "answer": "vibrafoon",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a032",
+          "answer": "doedelzak",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a033",
+          "answer": "mondharmonica",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a034",
+          "answer": "draailier",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a035",
+          "answer": "cimbalom",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a036",
+          "answer": "ondes Martenot",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a037",
+          "answer": "serpent",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a038",
+          "answer": "nyckelharpa",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-instrumenten-a039",
+          "answer": "octobas",
+          "tier": "krillion",
+          "aliases": [
+            "octobass"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nl-mineralen",
+      "version": 1,
+      "contentHash": "c958a7fc83e08011c82079e697917d19242a6da230c11168a007cdae53d79b20",
+      "text": "Noem een mineraalsoort; geen gesteente of alleen een kleurvariant.",
+      "language": "nl",
+      "originalLanguage": "nl",
+      "translations": {
+        "en": "Name a mineral species, not a rock or just a colour variety."
+      },
+      "validation": {
+        "type": "listed"
+      },
+      "answers": [
+        {
+          "answerId": "nl-mineralen-a001",
+          "answer": "kwarts",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a002",
+          "answer": "diamant",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a003",
+          "answer": "goud",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a004",
+          "answer": "zilver",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a005",
+          "answer": "calciet",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a006",
+          "answer": "pyriet",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a007",
+          "answer": "haliet",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a008",
+          "answer": "gips",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a009",
+          "answer": "talk",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a010",
+          "answer": "fluoriet",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a011",
+          "answer": "magnetiet",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a012",
+          "answer": "hematiet",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a013",
+          "answer": "koper",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a014",
+          "answer": "korund",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a015",
+          "answer": "aragoniet",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a016",
+          "answer": "malachiet",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a017",
+          "answer": "azuriet",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a018",
+          "answer": "galeniet",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a019",
+          "answer": "sfaleriet",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a020",
+          "answer": "cinnaber",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a021",
+          "answer": "beril",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a022",
+          "answer": "topaas",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a023",
+          "answer": "zirkoon",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a024",
+          "answer": "spinel",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a025",
+          "answer": "orthoklaas",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a026",
+          "answer": "albiet",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a027",
+          "answer": "muscoviet",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a028",
+          "answer": "kyaniet",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a029",
+          "answer": "andalusiet",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a030",
+          "answer": "sillimaniet",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a031",
+          "answer": "stauroliet",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a032",
+          "answer": "bariet",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a033",
+          "answer": "celestien",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-mineralen-a034",
+          "answer": "benitoiet",
+          "tier": "krillion",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "nl-bloemonderdelen",
+      "version": 1,
+      "contentHash": "813d710bc7bc294501822d8e9e7b577924091062ae02d39c28899be707ed4c34",
+      "text": "Noem een anatomisch onderdeel van een bloem.",
+      "language": "nl",
+      "originalLanguage": "nl",
+      "translations": {
+        "en": "Name an anatomical part of a flower."
+      },
+      "validation": {
+        "type": "listed"
+      },
+      "answers": [
+        {
+          "answerId": "nl-bloemonderdelen-a001",
+          "answer": "kroonblad",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a002",
+          "answer": "kelkblad",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a003",
+          "answer": "stamper",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a004",
+          "answer": "meeldraad",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a005",
+          "answer": "stempel",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a006",
+          "answer": "stijl",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a007",
+          "answer": "vruchtbeginsel",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a008",
+          "answer": "helmknop",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a009",
+          "answer": "helmdraad",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a010",
+          "answer": "bloembodem",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a011",
+          "answer": "bloemsteel",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a012",
+          "answer": "kelk",
+          "tier": "schooler",
+          "aliases": [
+            "bloemkelk"
+          ]
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a013",
+          "answer": "kroon",
+          "tier": "schooler",
+          "aliases": [
+            "bloemkroon"
+          ]
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a014",
+          "answer": "bloemdek",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a015",
+          "answer": "zaadbeginsel",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a016",
+          "answer": "honingklier",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a017",
+          "answer": "spoor",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a018",
+          "answer": "staminodium",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a019",
+          "answer": "stempelzuil",
+          "tier": "deepcut",
+          "aliases": [
+            "gynostemium"
+          ]
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a020",
+          "answer": "helmhokje",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a021",
+          "answer": "zaadlijst",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-bloemonderdelen-a022",
+          "answer": "helmbindsel",
+          "tier": "krillion",
+          "aliases": [
+            "connectivum"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nl-stijlfiguren",
+      "version": 1,
+      "contentHash": "30895f25d4349d10b0d5bdfff5bebb3c31da6736d009d59db74f7a4a9b7c673e",
+      "text": "Noem een stijlfiguur of vorm van beeldspraak.",
+      "language": "nl",
+      "originalLanguage": "nl",
+      "translations": {
+        "en": "Name a rhetorical figure or a form of figurative language."
+      },
+      "validation": {
+        "type": "listed"
+      },
+      "answers": [
+        {
+          "answerId": "nl-stijlfiguren-a001",
+          "answer": "metafoor",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a002",
+          "answer": "vergelijking",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a003",
+          "answer": "ironie",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a004",
+          "answer": "herhaling",
+          "tier": "plankton",
+          "aliases": [
+            "repetitie"
+          ]
+        },
+        {
+          "answerId": "nl-stijlfiguren-a005",
+          "answer": "hyperbool",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a006",
+          "answer": "personificatie",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a007",
+          "answer": "alliteratie",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a008",
+          "answer": "eufemisme",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a009",
+          "answer": "retorische vraag",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a010",
+          "answer": "tegenstelling",
+          "tier": "schooler",
+          "aliases": [
+            "antithese"
+          ]
+        },
+        {
+          "answerId": "nl-stijlfiguren-a011",
+          "answer": "opsomming",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a012",
+          "answer": "sarcasme",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a013",
+          "answer": "oxymoron",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a014",
+          "answer": "litotes",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a015",
+          "answer": "metonymie",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a016",
+          "answer": "synesthesie",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a017",
+          "answer": "chiasme",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a018",
+          "answer": "paradox",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a019",
+          "answer": "anafoor",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a020",
+          "answer": "climax",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a021",
+          "answer": "anticlimax",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a022",
+          "answer": "ellips",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a023",
+          "answer": "pleonasme",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a024",
+          "answer": "tautologie",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a025",
+          "answer": "zeugma",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a026",
+          "answer": "asyndeton",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a027",
+          "answer": "polysyndeton",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a028",
+          "answer": "epifoor",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a029",
+          "answer": "anadiplosis",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a030",
+          "answer": "paralipsis",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-stijlfiguren-a031",
+          "answer": "apokoinou",
+          "tier": "krillion",
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "id": "nl-zeilschepen",
+      "version": 1,
+      "contentHash": "acffc46c2e8dcb9a6917aba60ed0310c24f1a4fabc629f66ccbd9c77e905c529",
+      "text": "Noem een historisch type zeilschip, geen individuele scheepsnaam.",
+      "language": "nl",
+      "originalLanguage": "nl",
+      "translations": {
+        "en": "Name a historical type of sailing vessel, not an individual ship."
+      },
+      "validation": {
+        "type": "listed"
+      },
+      "answers": [
+        {
+          "answerId": "nl-zeilschepen-a001",
+          "answer": "galjoen",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a002",
+          "answer": "fregat",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a003",
+          "answer": "klipper",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a004",
+          "answer": "schoener",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a005",
+          "answer": "brik",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a006",
+          "answer": "bark",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a007",
+          "answer": "kotter",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a008",
+          "answer": "sloep",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a009",
+          "answer": "botter",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a010",
+          "answer": "tjalk",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a011",
+          "answer": "kogge",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a012",
+          "answer": "fluit",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a013",
+          "answer": "karveel",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a014",
+          "answer": "boeier",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a015",
+          "answer": "schokker",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a016",
+          "answer": "aak",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a017",
+          "answer": "skûtsje",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a018",
+          "answer": "hoogaars",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a019",
+          "answer": "lemsteraak",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a020",
+          "answer": "punter",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a021",
+          "answer": "hengst",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a022",
+          "answer": "smak",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a023",
+          "answer": "pink",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a024",
+          "answer": "snauw",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a025",
+          "answer": "driemastbark",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a026",
+          "answer": "kraak",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-zeilschepen-a027",
+          "answer": "kaag",
+          "tier": "krillion",
+          "aliases": [
+            "kaagschip"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nl-vlakke-krommen",
+      "version": 1,
+      "contentHash": "d323f11dd2690e60fbeea87a121c8ad284b2010d6f091e35183ee92a91f7ff67",
+      "text": "Noem een benoemde vlakke kromme, zoals een cirkel.",
+      "language": "nl",
+      "originalLanguage": "nl",
+      "translations": {
+        "en": "Name a named plane curve, such as a circle."
+      },
+      "validation": {
+        "type": "listed"
+      },
+      "answers": [
+        {
+          "answerId": "nl-vlakke-krommen-a001",
+          "answer": "cirkel",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a002",
+          "answer": "ellips",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a003",
+          "answer": "parabool",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a004",
+          "answer": "hyperbool",
+          "tier": "plankton",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a005",
+          "answer": "sinusoïde",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a006",
+          "answer": "cosinusoïde",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a007",
+          "answer": "spiraal",
+          "tier": "schooler",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a008",
+          "answer": "lemniscaat",
+          "tier": "tooclever",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a009",
+          "answer": "cycloïde",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a010",
+          "answer": "cardioïde",
+          "tier": "rare",
+          "aliases": [
+            "hartkromme"
+          ]
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a011",
+          "answer": "kettinglijn",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a012",
+          "answer": "archimedische spiraal",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a013",
+          "answer": "logaritmische spiraal",
+          "tier": "rare",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a014",
+          "answer": "epicycloïde",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a015",
+          "answer": "hypocycloïde",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a016",
+          "answer": "astroïde",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a017",
+          "answer": "cissoïde",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a018",
+          "answer": "conchoïde",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a019",
+          "answer": "clothoïde",
+          "tier": "deepcut",
+          "aliases": [
+            "eulerspiraal"
+          ]
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a020",
+          "answer": "tractrix",
+          "tier": "deepcut",
+          "aliases": []
+        },
+        {
+          "answerId": "nl-vlakke-krommen-a021",
+          "answer": "nefroïde",
+          "tier": "krillion",
+          "aliases": [
+            "nephroïde"
+          ]
+        }
+      ]
+    }
+  ],
+  "editionId": "cf-nl-586a7b9c55c6edd065f1e610",
+  "contentHash": "586a7b9c55c6edd065f1e6108355b3c88a98d8d9f3145d6973b8aea940e45399"
+}
